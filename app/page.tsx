@@ -44,30 +44,35 @@ export default function Home() {
         <h2 className="text-4xl font-semibold mb-6 lg:mb-12">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-slate-100 rounded-lg shadow-lg overflow-hidden text-gray-900"
-            >
-              <Image
-                src={project.ogImage}
-                alt={`${project.title} OG Image`}
-                width={1200}
-                height={630}
-                className="object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-sm mb-4">{project.description}</p>
+              <div
+                key={index} 
+                className="bg-slate-100 rounded-lg shadow-lg overflow-hidden text-gray-900"
+              >
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition"
                 >
-                  Visit Project
+                  <Image
+                    src={project.ogImage}
+                    alt={`${project.title} OG Image`}
+                    width={1200}
+                    height={630}
+                    className="object-cover"
+                  />
                 </a>
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-sm mb-4">{project.description}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel=" noreferrer"
+                    className="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition"
+                  >
+                    Visit Project
+                  </a>
+                </div>
               </div>
-            </div>
           ))}
         </div>
       </main>
